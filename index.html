@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Davrpoligraf — Poligrafiya xizmatlari</title>
+
+<meta name="description" content="Davrpoligraf — Qiziltepa tumanidagi poligrafiya xizmatlari. Kitob chiqarish, pereplyot, laminatsiya, muqovalash, ta'mirlash va boshqa xizmatlar.">
+<meta name="keywords" content="Davrpoligraf, poligrafiya, Qiziltepa, kitob chiqarish, laminatsiya, pereplyot, muqovalash">
+<meta name="author" content="Davrpoligraf">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: white;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: #facc15;
+    color: #111827;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #facc15;
+}
+
+.hero {
+    background:
+        linear-gradient(rgba(17,24,39,.88), rgba(17,24,39,.88)),
+        radial-gradient(circle at top right, #facc15, transparent 35%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #facc15;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    color: #e5e7eb;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.yellow {
+    background: #facc15;
+    color: #111827;
+}
+
+.green {
+    background: #16a34a;
+    color: white;
+}
+
+.dark {
+    background: #111827;
+    color: white;
+}
+
+section {
+    padding: 65px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+    border: 1px solid #e5e7eb;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.prices {
+    background: #111827;
+    color: white;
+}
+
+.price-box {
+    max-width: 700px;
+    margin: auto;
+    background: #1f2937;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #374151;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price {
+    color: #facc15;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.about {
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info {
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 15px;
+}
+
+.payment {
+    background: linear-gradient(135deg, #facc15, #fde68a);
+}
+
+.payment-box {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+.card-number {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 20px 0 8px;
+    word-break: break-all;
+}
+
+.card-owner {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact {
+    background: #f5f7fa;
+}
+
+.contact-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.contact-item {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.contact-item a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+footer strong {
+    color: #facc15;
+}
+
+@media(max-width:700px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .price-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            <div class="logo-icon">D</div>
+            <div>DAVRPOLIGRAF</div>
+        </div>
+
+        <nav>
+            <a href="#xizmatlar">Xizmatlar</a>
+            <a href="#narxlar">Narxlar</a>
+            <a href="#tolov">To‘lov</a>
+            <a href="#aloqa">Aloqa</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            <span>Davrpoligraf</span>
+        </h1>
+
+        <p>
+            Sifatli poligrafiya xizmatlari — kitob, hujjat va
+            qog‘oz mahsulotlarini tayyorlash.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn yellow"
+               href="tel:+998993438884">
+                📞 Telefon qilish
+            </a>
+
+            <a class="btn green"
+               href="https://t.me/Davr8884"
+               target="_blank">
+                ✈️ Telegram
+            </a>
+
+            <a class="btn dark"
+               href="#tolov">
+                💳 To‘lov qilish
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="xizmatlar">
+
+    <div class="container">
+
+        <h2 class="title">📚 Bizning xizmatlar</h2>
+
+        <p class="subtitle">
+            Sizga kerak bo‘lgan poligrafiya xizmatlarining ko‘pchiligi bir joyda.
+        </p>
+
+        <div class="services">
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Kitob chiqarish</h3>
+                <p>Kitob va o‘quv qo‘llanmalarini sifatli chiqarish.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Pereplyot</h3>
+                <p>Kitob va hujjatlarni mustahkam bog‘lash.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✨</div>
+                <h3>Laminatsiya</h3>
+                <p>Hujjat va qog‘oz mahsulotlarini laminatsiya qilish.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📕</div>
+                <h3>Muqovalash</h3>
+                <p>Turli xil hujjat va kitoblarni muqovalash.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <h3>Kitob ta’mirlash</h3>
+                <p>Eski va shikastlangan kitoblarni ta’mirlash.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h3>Blanka chiqarish</h3>
+                <p>Turli xil blankalar va hujjatlarni tayyorlash.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>O‘quv qo‘llanmalar</h3>
+                <p>Abituriyentlar va maktab o‘quvchilari uchun darslik va qo‘llanmalar.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Qog‘oz mahsulotlari</h3>
+                <p>Turli o‘lcham va ko‘rinishdagi qog‘oz mahsulotlari.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="narxlar" class="prices">
+
+    <div class="container">
+
+        <h2 class="title">💰 Narxlar</h2>
+
+        <p class="subtitle" style="color:#d1d5db;">
+            Asosiy xizmatlar bo‘yicha narxlar
+        </p>
+
+        <div class="price-box">
+
+            <div class="price-row">
+                <span>📄 Oq list</span>
+                <span class="price">200 so‘m</span>
+            </div>
+
+            <div class="price-row">
+                <span>📰 Gazet list</span>
+                <span class="price">150 so‘m</span>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;margin-top:20px;color:#d1d5db;">
+            Boshqa xizmatlar narxini bilish uchun biz bilan bog‘laning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <div class="container">
+
+        <h2 class="title">📍 Biz haqimizda</h2>
+
+        <p class="subtitle">
+            Davrpoligraf — Qiziltepa tumanidagi poligrafiya xizmatlari.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info">
+                <h3>📍 Manzil</h3>
+                <p>
+                    Navoiy viloyati,<br>
+                    Qiziltepa tumani,<br>
+                    Alisher Navoiy mahallasi
+                </p>
+            </div>
+
+            <div class="info">
+                <h3>🕐 Ish vaqti</h3>
+                <p>
+                    Har kuni<br>
+                    <strong>08:00 — 20:00</strong>
+                </p>
+            </div>
+
+            <div class="info">
+                <h3>📞 Telefon</h3>
+                <p>
+                    <a href="tel:+998993438884">
+                        +998 99 343 88 84
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="tolov" class="payment">
+
+    <div class="container">
+
+        <h2 class="title">💳 To‘lov</h2>
+
+        <div class="payment-box">
+
+            <h3>Click orqali to‘lov</h3>
+
+            <p>
+                Buyurtma uchun to‘lovni quyidagi karta orqali
+                amalga oshirishingiz mumkin.
+            </p>
+
+            <div class="card-number">
+                9860 1201 4371 5130
+            </div>
+
+            <div class="card-owner">
+                Karta egasi: <strong>To‘lqinov Farrux</strong>
+            </div>
+
+            <button class="btn green"
+                    onclick="copyCard()">
+                📋 Karta raqamini nusxalash
+            </button>
+
+            <p id="copyMessage"
+               style="margin-top:15px;color:#16a34a;font-weight:bold;">
+            </p>
+
+            <p style="margin-top:20px;color:#666;">
+                Click ilovasida ushbu karta raqamiga
+                to‘lov qilishingiz mumkin.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="aloqa" class="contact">
+
+    <div class="container">
+
+        <h2 class="title">📞 Biz bilan bog‘laning</h2>
+
+        <p class="subtitle">
+            Buyurtma yoki ma’lumot olish uchun murojaat qiling.
+        </p>
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <h3>📞 Telefon</h3>
+
+                <br>
+
+                <a href="tel:+998993438884">
+                    +998 99 343 88 84
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>✈️ Telegram</h3>
+
+                <br>
+
+                <a href="https://t.me/Davr8884"
+                   target="_blank">
+                    @Davr8884
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>📍 Manzil</h3>
+
+                <br>
+
+                <p>
+                    Navoiy viloyati,<br>
+                    Qiziltepa tumani,<br>
+                    Alisher Navoiy mahallasi
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Davrpoligraf</strong>.
+        Barcha huquqlar himoyalangan.
+    </p>
+
+    <p style="margin-top:5px;">
+        Poligrafiya xizmatlari
+    </p>
+
+</footer>
+
+
+<script>
+
+function copyCard() {
+
+    const card = "9860120143715130";
+
+    navigator.clipboard.writeText(card).then(function() {
+
+        document.getElementById("copyMessage").innerText =
+            "✅ Karta raqami nusxalandi!";
+
+        setTimeout(function() {
+
+            document.getElementById("copyMessage").innerText = "";
+
+        }, 3000);
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
